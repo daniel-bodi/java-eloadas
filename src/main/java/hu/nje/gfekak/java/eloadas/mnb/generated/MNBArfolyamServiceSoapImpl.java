@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;

@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import jakarta.xml.ws.WebFault;
 
@@ -11,7 +11,7 @@ import jakarta.xml.ws.WebFault;
  * 
  */
 @WebFault(name = "string", targetNamespace = "http://schemas.microsoft.com/2003/10/Serialization/")
-public class MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage
+public class MNBArfolyamServiceSoapGetCurrentExchangeRatesStringFaultFaultMessage
     extends Exception
 {
 
@@ -26,7 +26,7 @@ public class MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage
      * @param faultInfo
      * @param message
      */
-    public MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage(String message, String faultInfo) {
+    public MNBArfolyamServiceSoapGetCurrentExchangeRatesStringFaultFaultMessage(String message, String faultInfo) {
         super(message);
         this.faultInfo = faultInfo;
     }
@@ -37,7 +37,7 @@ public class MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage
      * @param faultInfo
      * @param message
      */
-    public MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage(String message, String faultInfo, Throwable cause) {
+    public MNBArfolyamServiceSoapGetCurrentExchangeRatesStringFaultFaultMessage(String message, String faultInfo, Throwable cause) {
         super(message, cause);
         this.faultInfo = faultInfo;
     }

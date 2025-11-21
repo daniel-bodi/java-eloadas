@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -7,12 +7,12 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for GetInfoRequestBody complex type.
+ * <p>Java class for GetDateIntervalRequestBody complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
- * <complexType name="GetInfoRequestBody">
+ * <complexType name="GetDateIntervalRequestBody">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
@@ -25,8 +25,8 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetInfoRequestBody")
-public class GetInfoRequestBody {
+@XmlType(name = "GetDateIntervalRequestBody")
+public class GetDateIntervalRequestBody {
 
 
 }

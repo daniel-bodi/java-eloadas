@@ -66,7 +66,7 @@
                     <wsdlUrls>
                         <wsdlUrl>http://www.mnb.hu/arfolyamok.asmx?wsdl</wsdlUrl>
                     </wsdlUrls>
-                    <packageName>hu.nje.gfekak.java.eloadas.mnb</packageName>
+                    <packageName>hu.nje.gfekak.java.eloadas.mnb.generated</packageName>
                     <sourceDestDir>src/main/java</sourceDestDir>
                 </configuration>
             </plugin>

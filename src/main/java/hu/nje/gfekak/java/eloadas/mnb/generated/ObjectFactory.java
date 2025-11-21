@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the hu.nje.gfekak.java.eloadas.mnb package. 
+ * generated in the hu.nje.gfekak.java.eloadas.mnb.generated package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -84,7 +84,7 @@ public class ObjectFactory {
     private static final QName _GetCurrenciesResponseBodyGetCurrenciesResult_QNAME = new QName("http://www.mnb.hu/webservices/", "GetCurrenciesResult");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: hu.nje.gfekak.java.eloadas.mnb
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: hu.nje.gfekak.java.eloadas.mnb.generated
      * 
      */
     public ObjectFactory() {

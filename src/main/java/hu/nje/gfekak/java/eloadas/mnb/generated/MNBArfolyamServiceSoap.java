@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
@@ -31,8 +31,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetCurrencies", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetCurrencies")
     @WebResult(name = "GetCurrenciesResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetCurrencies", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrenciesRequestBody")
-    @ResponseWrapper(localName = "GetCurrenciesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrenciesResponseBody")
+    @RequestWrapper(localName = "GetCurrencies", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrenciesRequestBody")
+    @ResponseWrapper(localName = "GetCurrenciesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrenciesResponseBody")
     public String getCurrencies()
         throws MNBArfolyamServiceSoapGetCurrenciesStringFaultFaultMessage
     ;
@@ -46,8 +46,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetCurrencyUnits", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetCurrencyUnits")
     @WebResult(name = "GetCurrencyUnitsResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetCurrencyUnits", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrencyUnitsRequestBody")
-    @ResponseWrapper(localName = "GetCurrencyUnitsResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrencyUnitsResponseBody")
+    @RequestWrapper(localName = "GetCurrencyUnits", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrencyUnitsRequestBody")
+    @ResponseWrapper(localName = "GetCurrencyUnitsResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrencyUnitsResponseBody")
     public String getCurrencyUnits(
         @WebParam(name = "currencyNames", targetNamespace = "http://www.mnb.hu/webservices/")
         String currencyNames)
@@ -62,8 +62,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetCurrentExchangeRates", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetCurrentExchangeRates")
     @WebResult(name = "GetCurrentExchangeRatesResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetCurrentExchangeRates", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrentExchangeRatesRequestBody")
-    @ResponseWrapper(localName = "GetCurrentExchangeRatesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetCurrentExchangeRatesResponseBody")
+    @RequestWrapper(localName = "GetCurrentExchangeRates", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrentExchangeRatesRequestBody")
+    @ResponseWrapper(localName = "GetCurrentExchangeRatesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetCurrentExchangeRatesResponseBody")
     public String getCurrentExchangeRates()
         throws MNBArfolyamServiceSoapGetCurrentExchangeRatesStringFaultFaultMessage
     ;
@@ -76,8 +76,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetDateInterval", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetDateInterval")
     @WebResult(name = "GetDateIntervalResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetDateInterval", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetDateIntervalRequestBody")
-    @ResponseWrapper(localName = "GetDateIntervalResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetDateIntervalResponseBody")
+    @RequestWrapper(localName = "GetDateInterval", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetDateIntervalRequestBody")
+    @ResponseWrapper(localName = "GetDateIntervalResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetDateIntervalResponseBody")
     public String getDateInterval()
         throws MNBArfolyamServiceSoapGetDateIntervalStringFaultFaultMessage
     ;
@@ -93,8 +93,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetExchangeRates", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetExchangeRates")
     @WebResult(name = "GetExchangeRatesResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetExchangeRates", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetExchangeRatesRequestBody")
-    @ResponseWrapper(localName = "GetExchangeRatesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetExchangeRatesResponseBody")
+    @RequestWrapper(localName = "GetExchangeRates", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetExchangeRatesRequestBody")
+    @ResponseWrapper(localName = "GetExchangeRatesResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetExchangeRatesResponseBody")
     public String getExchangeRates(
         @WebParam(name = "startDate", targetNamespace = "http://www.mnb.hu/webservices/")
         String startDate,
@@ -113,8 +113,8 @@ public interface MNBArfolyamServiceSoap {
      */
     @WebMethod(operationName = "GetInfo", action = "http://www.mnb.hu/webservices/MNBArfolyamServiceSoap/GetInfo")
     @WebResult(name = "GetInfoResult", targetNamespace = "http://www.mnb.hu/webservices/")
-    @RequestWrapper(localName = "GetInfo", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetInfoRequestBody")
-    @ResponseWrapper(localName = "GetInfoResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.GetInfoResponseBody")
+    @RequestWrapper(localName = "GetInfo", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetInfoRequestBody")
+    @ResponseWrapper(localName = "GetInfoResponse", targetNamespace = "http://www.mnb.hu/webservices/", className = "hu.nje.gfekak.java.eloadas.mnb.generated.GetInfoResponseBody")
     public String getInfo()
         throws MNBArfolyamServiceSoapGetInfoStringFaultFaultMessage
     ;

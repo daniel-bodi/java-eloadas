@@ -1,5 +1,5 @@
 
-package hu.nje.gfekak.java.eloadas.mnb;
+package hu.nje.gfekak.java.eloadas.mnb.generated;
 
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -9,16 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for GetCurrencyUnitsRequestBody complex type.
+ * <p>Java class for GetCurrenciesResponseBody complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
- * <complexType name="GetCurrencyUnitsRequestBody">
+ * <complexType name="GetCurrenciesResponseBody">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <element name="currencyNames" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="GetCurrenciesResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -28,36 +28,36 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetCurrencyUnitsRequestBody", propOrder = {
-    "currencyNames"
+@XmlType(name = "GetCurrenciesResponseBody", propOrder = {
+    "getCurrenciesResult"
 })
-public class GetCurrencyUnitsRequestBody {
+public class GetCurrenciesResponseBody {
 
-    @XmlElementRef(name = "currencyNames", namespace = "http://www.mnb.hu/webservices/", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> currencyNames;
+    @XmlElementRef(name = "GetCurrenciesResult", namespace = "http://www.mnb.hu/webservices/", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> getCurrenciesResult;
 
     /**
-     * Gets the value of the currencyNames property.
+     * Gets the value of the getCurrenciesResult property.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getCurrencyNames() {
-        return currencyNames;
+    public JAXBElement<String> getGetCurrenciesResult() {
+        return getCurrenciesResult;
     }
 
     /**
-     * Sets the value of the currencyNames property.
+     * Sets the value of the getCurrenciesResult property.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setCurrencyNames(JAXBElement<String> value) {
-        this.currencyNames = value;
+    public void setGetCurrenciesResult(JAXBElement<String> value) {
+        this.getCurrenciesResult = value;
     }
 
 }
