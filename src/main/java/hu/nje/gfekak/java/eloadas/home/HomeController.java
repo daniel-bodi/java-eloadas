@@ -1,6 +1,5 @@
-package hu.nje.gfekak.java.eloadas;
+package hu.nje.gfekak.java.eloadas.home;
 
-import hu.nje.gfekak.java.eloadas.mnb.MnbFormParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
