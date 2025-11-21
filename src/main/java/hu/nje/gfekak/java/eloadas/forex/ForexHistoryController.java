@@ -46,7 +46,7 @@ public class ForexHistoryController {
                                      @RequestParam("granularity") String granularity,
                                      Model model) throws Exception {
 
-        Context ctx = new Context("https://api-fxpractice.oanda.com", odanaAccountConfiguration.getToken());
+        Context ctx = new Context(ForexConstants.API_URI, odanaAccountConfiguration.getToken());
 
         InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(instrument))
                 .setCount(10L)

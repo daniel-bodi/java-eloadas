@@ -25,7 +25,7 @@ public class ForexAccountController {
 
     @GetMapping("/forex-account")
     public String accountInfo(Model model) throws ExecuteException, RequestException {
-        Context ctx = new Context("https://api-fxpractice.oanda.com", odanaAccountConfiguration.getToken());
+        Context ctx = new Context(ForexConstants.API_URI, odanaAccountConfiguration.getToken());
         AccountSummaryResponse response = ctx.account.summary(new AccountID(odanaAccountConfiguration.getAccountId()));
         AccountSummary account = response.getAccount();
 

@@ -27,7 +27,6 @@ public class ForexPriceController {
         this.odanaAccountConfiguration = odanaAccountConfiguration;
     }
 
-    // GET: instrumentum kiválasztás oldala
     @GetMapping("/forex-price")
     public String forexPriceForm(Model model) {
         model.addAttribute("instruments", ForexConstants.INSTRUMENTS);
@@ -36,10 +35,9 @@ public class ForexPriceController {
         return "forex-price";
     }
 
-    // POST: kiválasztott instrumentum ár lekérése
     @PostMapping("/forex-price")
     public String forexPriceSubmit(@RequestParam("instrument") String instrument, Model model) throws Exception {
-        Context ctx = new Context("https://api-fxpractice.oanda.com", odanaAccountConfiguration.getToken());
+        Context ctx = new Context(ForexConstants.API_URI, odanaAccountConfiguration.getToken());
 
         PricingGetRequest request = new PricingGetRequest(new AccountID(odanaAccountConfiguration.getAccountId()), List.of(instrument));
         PricingGetResponse response = ctx.pricing.get(request);
