@@ -6,9 +6,19 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author danielbodi
  */
 @ConfigurationProperties(prefix = "odana")
-public class OdanaAccountConfiguration {
+public class OdanaConfiguration {
+
+    private String apiUrl;
     private String accountId;
     private String token;
+
+    public String getApiUrl() {
+        return apiUrl;
+    }
+
+    public void setApiUrl(String apiUrl) {
+        this.apiUrl = apiUrl;
+    }
 
     public String getAccountId() {
         return accountId;

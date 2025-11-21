@@ -2,12 +2,11 @@ package hu.nje.gfekak.java.eloadas.forex;
 
 import com.oanda.v20.Context;
 import com.oanda.v20.instrument.Candlestick;
-import com.oanda.v20.instrument.CandlestickData;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.InstrumentName;
-import hu.nje.gfekak.java.eloadas.forex.config.OdanaAccountConfiguration;
+import hu.nje.gfekak.java.eloadas.forex.config.OdanaConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +23,10 @@ public class ForexHistoryController {
 
 
 
-    private final OdanaAccountConfiguration odanaAccountConfiguration;
+    private final OdanaConfiguration odanaConfiguration;
 
-    public ForexHistoryController(OdanaAccountConfiguration odanaAccountConfiguration) {
-        this.odanaAccountConfiguration = odanaAccountConfiguration;
+    public ForexHistoryController(OdanaConfiguration odanaConfiguration) {
+        this.odanaConfiguration = odanaConfiguration;
     }
 
     @GetMapping("/forex-history")
@@ -46,7 +45,7 @@ public class ForexHistoryController {
                                      @RequestParam("granularity") String granularity,
                                      Model model) throws Exception {
 
-        Context ctx = new Context(ForexConstants.API_URI, odanaAccountConfiguration.getToken());
+        Context ctx = new Context(odanaConfiguration.getApiUrl(), odanaConfiguration.getToken());
 
         InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(instrument))
                 .setCount(10L)

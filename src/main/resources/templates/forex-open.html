@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Forex Position</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Open Forex Position</h1>
+
+    <form th:action="@{/forex-open}" method="post" class="mb-4">
+        <div class="mb-3">
+            <label for="instrument" class="form-label">Select Instrument</label>
+            <select class="form-select" id="instrument" name="instrument">
+                <option th:each="inst : ${instruments}"
+                        th:value="${inst}"
+                        th:text="${inst}"
+                        th:selected="${inst == selectedInstrument}"></option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="amount" class="form-label">Units (positive = Long, negative = Short)</label>
+            <input type="number" step="1" class="form-control" id="amount" name="amount"
+                   th:value="${amount}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Open Position</button>
+    </form>
+
+    <div th:if="${result != null}" class="alert alert-success">
+        <strong th:text="${result}"></strong>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

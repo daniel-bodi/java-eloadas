@@ -5,7 +5,7 @@ import com.oanda.v20.account.AccountID;
 import com.oanda.v20.pricing.ClientPrice;
 import com.oanda.v20.pricing.PricingGetRequest;
 import com.oanda.v20.pricing.PricingGetResponse;
-import hu.nje.gfekak.java.eloadas.forex.config.OdanaAccountConfiguration;
+import hu.nje.gfekak.java.eloadas.forex.config.OdanaConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +21,10 @@ import java.util.List;
 public class ForexPriceController {
 
 
-    private final OdanaAccountConfiguration odanaAccountConfiguration;
+    private final OdanaConfiguration odanaConfiguration;
 
-    public ForexPriceController(OdanaAccountConfiguration odanaAccountConfiguration) {
-        this.odanaAccountConfiguration = odanaAccountConfiguration;
+    public ForexPriceController(OdanaConfiguration odanaConfiguration) {
+        this.odanaConfiguration = odanaConfiguration;
     }
 
     @GetMapping("/forex-price")
@@ -37,9 +37,9 @@ public class ForexPriceController {
 
     @PostMapping("/forex-price")
     public String forexPriceSubmit(@RequestParam("instrument") String instrument, Model model) throws Exception {
-        Context ctx = new Context(ForexConstants.API_URI, odanaAccountConfiguration.getToken());
+        Context ctx = new Context(odanaConfiguration.getApiUrl(), odanaConfiguration.getToken());
 
-        PricingGetRequest request = new PricingGetRequest(new AccountID(odanaAccountConfiguration.getAccountId()), List.of(instrument));
+        PricingGetRequest request = new PricingGetRequest(new AccountID(odanaConfiguration.getAccountId()), List.of(instrument));
         PricingGetResponse response = ctx.pricing.get(request);
         List<ClientPrice> prices = response.getPrices();
 
