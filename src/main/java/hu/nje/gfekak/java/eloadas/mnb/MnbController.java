@@ -25,7 +25,7 @@ import java.util.List;
  * @author danielbodi
  */
 @Controller
-public class MnbThymeleafController {
+public class MnbController {
 
     @GetMapping("/mnb-rates")
     public String soap1(Model model) {
