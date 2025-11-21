@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author danielbodi
  */
 @Controller
-public class ForexController {
+public class ForexAccountController {
 
     private final OdanaAccountConfiguration odanaAccountConfiguration;
 
-    public ForexController(OdanaAccountConfiguration odanaAccountConfiguration) {
+    public ForexAccountController(OdanaAccountConfiguration odanaAccountConfiguration) {
         this.odanaAccountConfiguration = odanaAccountConfiguration;
     }
 
