@@ -20,7 +20,7 @@ import java.util.List;
 @Controller
 public class ForexPriceController {
 
-    public static final List<String> INSTRUMENTS = List.of("EUR_USD", "GBP_USD", "USD_JPY", "EUR_GBP");
+
     private final OdanaAccountConfiguration odanaAccountConfiguration;
 
     public ForexPriceController(OdanaAccountConfiguration odanaAccountConfiguration) {
@@ -30,7 +30,7 @@ public class ForexPriceController {
     // GET: instrumentum kiválasztás oldala
     @GetMapping("/forex-price")
     public String forexPriceForm(Model model) {
-        model.addAttribute("instruments", INSTRUMENTS);
+        model.addAttribute("instruments", ForexConstants.INSTRUMENTS);
         model.addAttribute("selectedInstrument", "");
         model.addAttribute("currentPrice", null);
         return "forex-price";
@@ -45,7 +45,7 @@ public class ForexPriceController {
         PricingGetResponse response = ctx.pricing.get(request);
         List<ClientPrice> prices = response.getPrices();
 
-        model.addAttribute("instruments", INSTRUMENTS);
+        model.addAttribute("instruments", ForexConstants.INSTRUMENTS);
         model.addAttribute("selectedInstrument", instrument);
         model.addAttribute("prices", prices);
 
