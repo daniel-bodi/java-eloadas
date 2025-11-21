@@ -10,10 +10,10 @@
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="container mt-5">
-    <h1>MNB Árfolyam lekérdezése</h1>
+    <h1>MNB Exchange rates</h1>
     <form th:action="@{/mnb-rates}" th:object="${param}" method="post">
         <div class="mb-3">
-            <label for="currency" class="form-label">Valuta</label>
+            <label for="currency" class="form-label">Currency</label>
             <select class="form-select" id="currency" th:field="*{currency}">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
@@ -23,16 +23,16 @@
         </div>
 
         <div class="mb-3">
-            <label for="startDate" class="form-label">Kezdő dátum</label>
+            <label for="startDate" class="form-label">Start date</label>
             <input type="date" class="form-control" id="startDate" th:field="*{startDate}">
         </div>
 
         <div class="mb-3">
-            <label for="endDate" class="form-label">Végdátum</label>
+            <label for="endDate" class="form-label">End date</label>
             <input type="date" class="form-control" id="endDate" th:field="*{endDate}">
         </div>
 
-        <button type="submit" class="btn btn-primary">Lekérdezés</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
