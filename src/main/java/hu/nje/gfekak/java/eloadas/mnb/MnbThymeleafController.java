@@ -8,6 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author danielbodi
@@ -15,19 +27,43 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MnbThymeleafController {
 
-    @GetMapping("/exercise")
+    @GetMapping("/mnb-rates")
     public String soap1(Model model) {
-        model.addAttribute("param", new MessagePrice());
-        return "form";
+        model.addAttribute("param", new MnbFormParam());
+        return "mnb-form";
     }
 
-    @PostMapping("/exercise")
-    public String soap2(@ModelAttribute MessagePrice messagePrice, Model model) throws MNBArfolyamServiceSoapGetExchangeRatesStringFaultFaultMessage {
+    @PostMapping("/mnb-rates")
+    public String soap2(@ModelAttribute("param") MnbFormParam param, Model model)
+            throws MNBArfolyamServiceSoapGetExchangeRatesStringFaultFaultMessage,
+            ParserConfigurationException, IOException, SAXException {
+
         MNBArfolyamServiceSoapImpl impl = new MNBArfolyamServiceSoapImpl();
         MNBArfolyamServiceSoap service = impl.getCustomBindingMNBArfolyamServiceSoap();
-        String strOut = "Currency:" + messagePrice.getCurrency() + ";" + "Start date:" + messagePrice.getStartDate() + ";" + "End date:" + messagePrice.getEndDate() + ";";
-        strOut += service.getExchangeRates(messagePrice.getStartDate(), messagePrice.getEndDate(), messagePrice.getCurrency());
-        model.addAttribute("sendOut", strOut);
-        return "result";
+
+        String response = service.getExchangeRates(param.getStartDate(), param.getEndDate(), param.getCurrency());
+
+        List<String> dates = new ArrayList<>();
+        List<String> rates = new ArrayList<>();
+
+        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+                .parse(new ByteArrayInputStream(response.getBytes(StandardCharsets.UTF_8)));
+
+        NodeList dayList = doc.getElementsByTagName("Day");
+        for (int i = 0; i < dayList.getLength(); i++) {
+            Element day = (Element) dayList.item(i);
+            String date = day.getAttribute("date");
+            Element rateElem = (Element) day.getElementsByTagName("Rate").item(0);
+            String rate = rateElem.getTextContent();
+
+            dates.add(date);
+            rates.add(rate);
+        }
+
+        model.addAttribute("dates", dates);
+        model.addAttribute("rates", rates);
+        model.addAttribute("currency", param.getCurrency());
+
+        return "mnb-result";
     }
 }

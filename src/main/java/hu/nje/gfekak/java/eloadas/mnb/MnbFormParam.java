@@ -3,7 +3,7 @@ package hu.nje.gfekak.java.eloadas.mnb;
 /**
  * @author danielbodi
  */
-public class MessagePrice {
+public class MnbFormParam {
     private String currency;
     private String startDate;
     private String endDate;

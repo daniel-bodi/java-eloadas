@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Rates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Navbar fragment -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container mt-5">
+    <h1>MNB árfolyamok a következő valutához: <span th:text="${currency}"></span></h1>
+
+    <!-- Táblázat -->
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr><th>Dátum</th><th>Árfolyam</th></tr>
+        </thead>
+        <tbody>
+        <tr th:each="date, stat : ${dates}">
+            <td th:text="${date}"></td>
+            <td th:text="${rates[stat.index]}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Chart.js -->
+    <canvas id="rateChart" width="400" height="200" class="mt-4"></canvas>
+</div>
+
+<!-- Chart.js script -->
+<script th:inline="javascript">
+    // Thymeleaf listák JS tömbbé alakítása
+    const dates = /*[[${dates}]]*/ [];
+    const rates = /*[[${rates}]]*/ [];
+
+    // Átalakítás float típusra (magyar "," miatt)
+    const numericRates = rates.map(r => parseFloat(r.replace(',', '.')));
+
+    const ctx = document.getElementById('rateChart').getContext('2d');
+    const rateChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Aktuális árfolyam',
+                data: numericRates,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Dátum' },
+                    ticks: { autoSkip: false }
+                },
+                y: {
+                    title: { display: true, text: 'Árfolyam' },
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
